@@ -40,7 +40,30 @@ class ClubDeportivo(Club):
         print("actividades:",self.actividades)
 
 
+    #Incorporar la funcionalidad para registrar nuevos socios dentro de la categoría correspondiente.
 
+    def registrar_socios(self,socio):
+        self.__socios.append(socio)
+        print("se agrego socio")
+
+    #Obtener la cantidad total de socios registrados en la categoría.
+
+    def cantidad_socio(self):
+        return len(self.__socios)      
+
+
+    #Permitir agregar nuevas actividades deportivas, recreativas o culturales ofrecidas por el club.
+    
+    def actividad_nueva(self,actividad):
+        self.actividades.append(actividad)
+        print("agregando actividad nueva")
+        
+    #Mostrar un listado completo de las actividades que se realizan en la categoría.
+
+    def mostrar_actividades(self):
+        for i in self.actividades:
+            print(i)
+        
 
 club_boca = ClubDeportivo("boca juniros","xeneize"," Ciudad Autónoma de Buenos Aires","juan roman riquelme"," 3 de abril de 1905.",282.644,"basquet")
 club_boca.mostrar()

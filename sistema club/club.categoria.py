@@ -1,0 +1,46 @@
+#b) Crear el archivo clubCategoria.py con la subclase ClubCategoria (la categoría que ustedes
+#quieran, por ejemplo: ClubRecreativo) que hereda de Club:
+#Atributos:
+
+#● __socios (lista de socios)
+#● actividades (lista de actividades)
+
+#Métodos:
+
+#● getters y setters
+
+
+from club import Club
+
+class ClubDeportivo(Club):
+    def __init__(self, nombre, descripcion, ubicacion, presidente, fecha_fundacion,socios,actividades):
+        #llama al constructor del Club
+        super().__init__(nombre, descripcion, ubicacion, presidente, fecha_fundacion)
+        self.__socios=socios
+        self.actividades=actividades
+
+
+    def get_socios(self):
+        return self.__socios
+    def get_actividades(self):
+        return self.actividades
+    
+    def set_socios(self,socios):
+        self.__socios= socios
+    def set_actividades(self,actividades):
+        self.actividades=actividades
+
+    def mostrar(self):
+        print("Nombre:", self.nombre)
+        print("Descripcion:", self.descripcion)
+        print("Ubicacion:", self.ubicacion)
+        print("Presidente:", self.get_presidente())
+        print("Fundacion:", self.get_fecha_fundacion())
+        print("socios:",self.__socios)
+        print("actividades:",self.actividades)
+
+
+
+
+club_boca = ClubDeportivo("boca juniros","xeneize"," Ciudad Autónoma de Buenos Aires","juan roman riquelme"," 3 de abril de 1905.",282.644,"basquet")
+club_boca.mostrar()

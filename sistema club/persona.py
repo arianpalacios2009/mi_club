@@ -53,6 +53,14 @@ class Persona():
         print("identificacion: ",self.get_identificacion())
         print("nacionalidad: ",self.get_nacionalidad())
         
-        
-persona=Persona("juan","30","Dni ","32.400.127","Argentina")
+    
+    #Determinar automáticamente si una persona es mayor o menor de edad.
+    def es_mayor_edad(self):
+        if  self.edad >= 18:
+            print("es mayor de edad")
+        else:
+            print("es menor de edad")
+    
+persona=Persona("juan",20,"Dni ","32.400.127","Argentina")
 persona.mostrar_datos()
+persona.es_mayor_edad()

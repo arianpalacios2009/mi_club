@@ -65,5 +65,7 @@ class ClubDeportivo(Club):
             print(i)
         
 
-club_boca = ClubDeportivo("boca juniros","xeneize"," Ciudad Autónoma de Buenos Aires","juan roman riquelme"," 3 de abril de 1905.",282.644,"basquet")
+   
+
+club_boca = ClubDeportivo("Boca juniors","Gigante del fútbol mundial, apodado Xeneize. Famoso por su estadio La Bombonera y su enorme identidad popular.","Barrio de La Boca, Buenos Aires, Argentina ","Juan Román Riquelme","3 de abril de 1905",264,000)
 club_boca.mostrar()

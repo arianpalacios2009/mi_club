@@ -36,4 +36,18 @@ class Socio:
     def set_contrasena(self,contrasena):
         self.__contrasena=contrasena
         
+        
+#Cambiar el estado de un socio activo a suspendido cuando corresponda.
+
+    def cambiar_estado(self):
+     self.estado="suspendido"
+    print("el estado esta suspendido")
+      
+    #Registrar el pago de una cuota pendiente.
+    def registrar_pago_de_cuota(self):
+        self.estado="pendiente"
+        print("el pago esta pendiente")
+    
 asociarte=Socio("10/6/2026","activo","pepito123","12345678")
+asociarte.registrar_pago_de_cuota()
+asociarte.cambiar_estado()

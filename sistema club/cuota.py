@@ -26,8 +26,15 @@ class Cuota:
         print("estado: ",self.estado)
         print("fecha de nacimiento: ",self.fecha_de_vencimiento)
         print("periodo: ",self.periodo)
+        
+      
+    #Registrar una cuota como pagada.
+    def pagar_cuota(self):
+        self.estado="pagada"
+        print("la cuota esta pagada")
     
 pagar=Cuota("pendiente","1 de agosto del 2026","cada 20 dias")
 pagar.mostrar()
 pagar.set_estado("pagado")
 pagar.mostrar()
+pagar.pagar_cuota()

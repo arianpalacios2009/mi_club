@@ -14,6 +14,9 @@ class Administrador:
     def __init__(self,nombre,usuario,contrasena):
         self.nombre=nombre
         
+        self.listado_socios=[]
+        
+        
         #atributos privados
         self.__usuario=usuario
         self.__contrasena=contrasena
@@ -30,4 +33,19 @@ class Administrador:
     def set_contrasena(self,contrasena):
         self.__contrasena=contrasena
         
+    #Obtener un listado completo de los socios pertenecientes a un club
+    # .Registrar nuevos socios en un club.    
+    def agregar_lista(self,socio):
+        self.listado_socios.append(socio)
+        
+    def listado_completo(self):
+        for i in self.listado_socios:
+            print("nombre completo: ",i)
+        
+
+
 admin=Administrador("tiziano","tizi123","87654321")
+admin.agregar_lista("arian")
+admin.agregar_lista("juan")
+admin.agregar_lista("pepe")
+admin.listado_completo()

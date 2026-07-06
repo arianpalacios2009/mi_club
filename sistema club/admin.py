@@ -10,7 +10,9 @@
 
 #● getters y setters
 
-class Administrador:
+from club_categoria import ClubDeportivo
+
+class Administrador(ClubDeportivo):
     def __init__(self,nombre,usuario,contrasena):
         self.nombre=nombre
         
@@ -36,10 +38,10 @@ class Administrador:
     #Obtener un listado completo de los socios pertenecientes a un club
     # .Registrar nuevos socios en un club.    
     def agregar_lista(self,socio):
-        self.listado_socios.append(socio)
+        super().__socios.append(socio)
         
     def listado_completo(self):
-        for i in self.listado_socios:
+        for i in super().__socios:
             print("nombre completo: ",i)
         
 

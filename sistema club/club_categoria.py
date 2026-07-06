@@ -16,8 +16,8 @@ class ClubDeportivo(Club):
     def __init__(self, nombre, descripcion, ubicacion, presidente, fecha_fundacion,socios,actividades):
         #llama al constructor del Club
         super().__init__(nombre, descripcion, ubicacion, presidente, fecha_fundacion)
-        self.__socios=socios
-        self.actividades=actividades
+        self.__socios= []
+        self.actividades= []
 
 
     def get_socios(self):
@@ -64,8 +64,6 @@ class ClubDeportivo(Club):
         for i in self.actividades:
             print(i)
         
-
-   
 
 club_boca = ClubDeportivo("Boca juniors","Gigante del fútbol mundial, apodado Xeneize. Famoso por su estadio La Bombonera y su enorme identidad popular.","Barrio de La Boca, Buenos Aires, Argentina ","Juan Román Riquelme","3 de abril de 1905",264,000)
 club_boca.mostrar()

@@ -27,7 +27,6 @@ class Cuota:
         print("fecha de nacimiento: ",self.fecha_de_vencimiento)
         print("periodo: ",self.periodo)
         
-      
     #Registrar una cuota como pagada.
     def pagar_cuota(self):
         self.estado="pagada"

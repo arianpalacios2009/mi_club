@@ -45,7 +45,20 @@ class Persona():
     def set_nacionalidad(self,nacionalidad):
         self.__nacionalidad=nacionalidad
         
-        
+    #Determinar automáticamente si una persona es mayor o menor de edad.
+    def es_mayor_edad(self):
+        if  self.edad >= 18:
+            print("es mayor de edad")
+        else:
+            print("es menor de edad")
+    
+    def verificar_identificacion(self):
+        if len(self.__identificacion) == 8:
+            print("La identificacion es valida")
+        else:
+            print("No es valida")
+
+
     def mostrar_datos(self):
         print("nombre_completo: ",self.nombre)
         print("edad: ",self.edad)
@@ -54,13 +67,9 @@ class Persona():
         print("nacionalidad: ",self.get_nacionalidad())
         
     
-    #Determinar automáticamente si una persona es mayor o menor de edad.
-    def es_mayor_edad(self):
-        if  self.edad >= 18:
-            print("es mayor de edad")
-        else:
-            print("es menor de edad")
-    
-persona=Persona("juan",20,"Dni ","32.400.127","Argentina")
+
+
+persona=Persona("juan",20,"Dni ","32400127","Argentina")
+persona.verificar_identificacion()
 persona.mostrar_datos()
 persona.es_mayor_edad()

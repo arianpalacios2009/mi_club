@@ -40,9 +40,9 @@ class Socio:
 #Cambiar el estado de un socio activo a suspendido cuando corresponda.
 
     def cambiar_estado(self):
-     self.estado="suspendido"
-    print("el estado esta suspendido")
-      
+        self.estado="suspendido"
+        print("el estado esta suspendido")
+
     #Registrar el pago de una cuota pendiente.
     def registrar_pago_de_cuota(self):
         self.estado="pendiente"

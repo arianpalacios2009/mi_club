@@ -8,6 +8,8 @@
 #Métodos:
 
 #● getters y setters
+from datetime import date
+
 
 
 class Cuota:
@@ -32,8 +34,30 @@ class Cuota:
         self.estado="pagada"
         print("la cuota esta pagada")
     
-pagar=Cuota("pendiente","1 de agosto del 2026","cada 20 dias")
+    def determinar(self):
+        hoy = date.today()
+        if hoy > self.fecha_de_vencimiento:
+            self.estado = "vencida"
+            return True
+        else:
+            return False
+    
+#Actualizar automáticamente el estado de la cuota cuando corresponda.
+    def actualizar_estado(self):
+        if self.determinar():
+            self.estado = "vencida"
+    
+    
+#Informar cuántos días faltan para el vencimiento de una cuota.
+    def informar_dias_faltantes(self):
+        hoy = date.today()
+        if hoy > self.fecha_de_vencimiento:
+            self    
+    
+pagar=Cuota("pendiente", date(2026,8,1), "08/2026")
 pagar.mostrar()
-pagar.set_estado("pagado")
+pagar.set_estado("pagada")
 pagar.mostrar()
 pagar.pagar_cuota()
+pagar.determinar()
+pagar.actualizar_estado()

@@ -13,54 +13,62 @@
 #● mostrar_info()
 #● getters y setters
 
-
-
-
+from datetime import date
 
 class Club:
-    def __init__(self,nombre,descripcion,ubicacion,existencia,presidente,fecha_fundacion):
+
+    def __init__(self, nombre, descripcion, ubicacion, presidente, fecha_fundacion):
 
         self.nombre = nombre
         self.descripcion = descripcion
         self.ubicacion = ubicacion
-        self.existencia=existencia
-        #atributos privados
+
+        # atributos privados
         self.__presidente = presidente
         self.__fecha_fundacion = fecha_fundacion
 
-    
-    #getters
+    # getters
     def get_presidente(self):
-        return self.__presidente 
+        return self.__presidente
 
     def get_fecha_fundacion(self):
         return self.__fecha_fundacion
 
-    #setters
+    # setters
     def set_presidente(self, presidente):
         self.__presidente = presidente
 
     def set_fecha_fundacion(self, fecha):
         self.__fecha_fundacion = fecha
-        
+
+    # Mostrar información
     def mostrar_info(self):
         print("Nombre:", self.nombre)
-        print("Descripcion:", self.descripcion)
-        print("Ubicacion:", self.ubicacion)
+        print("Descripción:", self.descripcion)
+        print("Ubicación:", self.ubicacion)
         print("Presidente:", self.get_presidente())
-        print("Fundacion:", self.get_fecha_fundacion())
-        
-        
-    #Determinar si el club puede considerarse una institución histórica, entendiendo como tal a aquellas que tengan más de 50 años de existencia.
+        print("Fecha de fundación:", self.get_fecha_fundacion())
+        print("Antigüedad:", self.antiguedad(), "años")
 
+    # Calcular la antigüedad del club
+    def antiguedad(self):
+        hoy = date.today()
+
+        años = hoy.year - self.__fecha_fundacion.year
+
+        return años
+
+    # Determinar si el club es histórico
     def determinar_club(self):
-        if self.existencia>=50:
-            print("es una institucion historica")
-        else:
-            print("no es una institucion historica")
-        
-        
 
-club1 = Club("boca juniors","xeneize"," Ciudad Autónoma de Buenos Aires",121,"juan roman riquelme"," 3 de abril de 1905.")
+        if self.antiguedad() >= 50:
+            print("Es una institución histórica.")
+        else:
+            print("No es una institución histórica.")
+
+
+
+club1 = Club("Boca Juniors","Xeneize","Ciudad Autónoma de Buenos Aires","Juan Román Riquelme",date(1905, 4, 3))
+
 club1.mostrar_info()
 club1.determinar_club()
